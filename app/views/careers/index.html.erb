@@ -1,0 +1,33 @@
+<!-- hero banner -->
+<section class="hero-common-banner">
+	<img src="<%= asset_path 'about-banner.jpg' %>" alt="hero images">
+	<span class="overlay"></span>
+	<h3 data-aos="fade-up" data-aos-duration="1000" data-aos-delay="50">Careers</h3>
+</section>
+
+<section class="career-wrapper">
+	<div class="container">
+		<div class="hiring-heading">
+			<h3>We're hiring!</h3>
+			<h1>Be part of our mission</h1>
+			<p>We are looking for passionate people to join us on our mission.</p>
+		</div>
+		<% @careers.each do |job| %>
+			<div class="row" style="--bs-gutter-x: -0.5rem;">
+				<div class="job-wrap">
+					<div class="job-listing">
+						<h3><%= job.role %></h3>
+						<p><%= job.description %></p>
+						<span><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path id="Stroke 1" fill-rule="evenodd" clip-rule="evenodd" d="M21.2498 12.0002C21.2498 17.1082 17.1088 21.2502 11.9998 21.2502C6.89176 21.2502 2.74976 17.1082 2.74976 12.0002C2.74976 6.89124 6.89176 2.75024 11.9998 2.75024C17.1088 2.75024 21.2498 6.89124 21.2498 12.0002Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+							<path id="Stroke 3" d="M16.1906 12.7673L11.6606 12.6933V7.84631" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+						</svg> <%= job.job_type %></span>
+				</div>
+				<button class="apply-btn" type="button">
+		      <a class="btn apply-btn" href='/contact'>Apply</a>
+		    </button>
+			</div>
+		<% end %>
+	</div>
+</div>
+</section>

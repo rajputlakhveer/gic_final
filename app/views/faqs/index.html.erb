@@ -1,0 +1,54 @@
+<!-- hero banner -->
+<section class="hero-common-banner">
+  <img src="<%= asset_path 'T&C.jpg' %>" alt="hero images">
+  <span class="overlay"></span>
+  <h3 data-aos="fade-up" data-aos-duration="1000" data-aos-delay="50">Frequently Asked Questions</h3>
+</section>
+
+<section class="faq-wrapper">
+  <div class="container">
+    <div class="faq-heading">
+      <h1>Have a question?</h1>
+    </div>
+    <div class="row">
+      <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
+        <div class="accordion" id="accordionExample">
+          <% @faqs1.each do |faq| %>  
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="heading1">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse<%= faq.id%>" aria-expanded="false" aria-controls="collapse<%= faq.id%>">
+                <%= faq.question %>
+              </button>
+            </h2>
+            <div id="collapse<%= faq.id%>" class="accordion-collapse collapse" aria-labelledby="heading1" data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                <p><%= faq.answer %></p>
+              </div>
+            </div>
+          </div>
+          <% end %>
+        </div>
+      </div>
+      <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
+        <div class="accordion" id="accordionExample">
+          <% @faqs2.each do |faq| %>  
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="heading1">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse<%= faq.id%>" aria-expanded="false" aria-controls="collapse<%= faq.id%>">
+                <%= faq.question %>
+              </button>
+            </h2>
+            <div id="collapse<%= faq.id%>" class="accordion-collapse collapse" aria-labelledby="heading1" data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                <p><%= faq.answer %></p>
+              </div>
+            </div>
+          </div>
+          <% end %>
+        </div> 
+    </div>
+    <div class="bottom-text">
+      <h3>Got more questions? Reach out to us anytime! Let’s plan your next adventure with GhumoIndiaCommunity!</h3>
+    </div>
+  </div>
+</section>

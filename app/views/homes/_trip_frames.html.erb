@@ -1,0 +1,34 @@
+<section class="trip-frames-wrapper">
+  <img class="bg-doodle" src="<%= asset_path 'title-doodle.png' %>" alt="doodle">
+  <div class="container">
+    <!-- title -->
+    <div class="common-heading-wrapper d-flex align-items-center justify-content-between">
+      <div class="left-title" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="50">
+        <h3>Trip Frames</h3>
+        <h4>Trip Frames</h4>
+        <span class="line-x"></span>
+      </div>
+    </div>
+    <div class="frame-slider">
+      <div class="panorama-slider">
+        <div class="swiper">
+          <div class="swiper-wrapper">
+            <%  @trip_frames.each do |trip_frame| %>
+              <div class="swiper-slide">
+                <div class="swiper-card">
+                  <%= image_tag (trip_frame.poster.presence || asset_path('Group photos/IMG_7426.JPG')), class: "slide-img", alt: trip_frame.location %>
+                  <div class="overlay-shade"></div>
+                  <div class="location-title">
+                    <img src="<%= asset_path 'Location.svg' %>" alt="location">
+                    <h4><%= trip_frame.location%></h4>
+                  </div>
+                </div>
+              </div>
+            <% end %>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

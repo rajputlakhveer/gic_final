@@ -1,0 +1,48 @@
+<!-- hero section -->
+<Section class="hero-section">
+  <span class="overlay-bg"></span>
+  <video class="my-video" autoplay muted loop>
+    <source src="<%= asset_path 'hero_video.mp4' %>" type="video/mp4"/>
+  </video>
+  <div class="title-wrapper">
+    <h3 data-aos="fade-down" data-aos-duration="1500" data-aos-delay="10" id="animatedText">Connect, Vibe and Discover</h3>
+    <a href="/upcoming_trips" type="button" class="btn upcoming-trip-btn">Upcoming Trips</a>
+  </div>
+</Section>
+
+<!-- rating review  -->
+<section class="reviews-card d-none">
+  <div class="container">
+    <div class="row align-items-center justify-content-center">
+      <div class="col-12 col-sm-4 col-md-4 col-lg-3 col-xl-3">
+        <div class="review-card" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="50">
+          <img src="<%= asset_path 'Google-icon.png' %>" class="google-img" alt="Google">
+          <div class="review">
+            <img src="<%= asset_path 'star.png' %>" alt="star">
+            <p>(4.8)</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-sm-4 col-md-4 col-lg-3 col-xl-3">
+        <div class="review-card" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="50">
+          <img src="<%= asset_path 'Tripadvisor.svg' %>" class="tripad-img" alt="justdial">
+          <div class="review">
+            <img src="<%= asset_path 'star.png' %>" alt="star">
+            <p>(4.5)</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- welcome title -->
+<section class="welcome-title">
+  <h3 data-aos="fade-up" data-aos-duration="1500" data-aos-delay="100">Welcome to <span>Ghumo India Community</span></h3>
+</section>
+
+<!-- Slides -->
+
+<% @homes.each do |home| %>
+<%= render home.slide_category%>
+<% end %>

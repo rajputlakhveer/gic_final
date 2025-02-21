@@ -1,0 +1,37 @@
+<section class="testimonial-wrapper">
+ <div class="container-fluid p-0">
+  <div class="heading-title-wrap">
+    <h2 data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">Build from word of mouth</h2>
+  </div>
+  <div class="bg-review-wrapper">
+    <div class="container">
+      <div class="row align-items-center">
+       <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+        <div class="frame-slider">
+          <div class="panorama-slider">
+            <div class="swiper">
+              <div class="swiper-wrapper">
+                <% @testimonials.each do |testimonial| %>
+                  <div class="swiper-slide">
+                    <div class="swiper-card">
+                      <%= image_tag (testimonial.image.presence || asset_path('review1.jpeg')), class: "slide-img", alt: testimonial.name %>
+                      <div class="overlay-shade"></div>
+                      <div class="review-details">
+                        <h1><%= testimonial.name %></h1>
+                        <p>"<%= testimonial.story %>"</p>
+                        <h3><%= testimonial.location  %></h3>
+                      </div>
+                    </div>
+                  </div>
+                <% end %>
+              </div>
+              <div class="swiper-pagination"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</section>

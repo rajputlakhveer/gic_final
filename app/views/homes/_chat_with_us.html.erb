@@ -1,0 +1,58 @@
+<section class="chat-us">
+  <div class="container">
+    <div class="row align-items-center justify-content-around">
+      <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-4">
+        <div class="connect-us-card">
+          <div class="heading-title">
+            <h3>Chat with our experienced consultant</h3>
+            <p>You can reach us anytime</p>
+          </div>
+
+          <% if flash[:notice] %>
+            <p class="text-success"><%= flash[:notice] %></p>
+          <% elsif flash[:alert] %>
+            <p class="text-danger"><%= flash[:alert] %></p>
+          <% end %>
+          <% @chat_us = ChatUs.new %>
+
+          <%= form_with model: @chat_us, url: chat_us_path, method: :post do |f| %>
+            <div class="row">
+              <div class="col-6">
+                <div class="form-floating">
+                  <%= f.text_field :first_name, class: "form-control", placeholder: "First name" %>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="form-floating">
+                  <%= f.text_field :last_name, class: "form-control", placeholder: "Last name" %>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-floating mb-3">
+              <%= f.email_field :email, class: "form-control", placeholder: "Your email" %>
+            </div>
+
+            <div class="form-floating mb-3">
+              <%= f.text_field :phone_number, class: "form-control", placeholder: "Phone number" %>
+            </div>
+
+            <div class="form-floating">
+              <%= f.text_area :comment, class: "form-control", placeholder: "Leave a comment here", style: "height: 100px" %>
+            </div>
+
+            <button class="btn submit-btn" type="submit">Submit</button>
+          <% end %>
+
+          <p>By contacting us, you agree to our <strong>Terms of Service</strong> and <strong>Privacy Policy</strong></p>
+        </div>
+      </div>
+
+      <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+        <div class="left-img-wrap">
+          <%= image_tag 'connect-us.svg', alt: 'banner' %>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

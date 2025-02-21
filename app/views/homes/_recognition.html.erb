@@ -1,0 +1,10 @@
+<section class="recognition">
+  <div class="container">
+    <h2 data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">RECOGNITION</h2>
+    <div class="img-groups">
+      <% @recognitions.each do |recognition| %>
+        <%= image_tag (recognition.logo.presence || asset_path('Group1.jpeg')), alt: recognition.title %>
+      <% end %>
+   </div>
+ </div>
+</section>

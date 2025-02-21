@@ -1,0 +1,39 @@
+<section class="upcoming-trips">
+  <div class="container">
+    <!-- title -->
+    <div class="common-heading-wrapper d-flex align-items-center justify-content-between">
+      <div class="left-title" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="50">
+        <h3>Upcoming Festival Trip</h3>
+        <h4>Upcoming Festival Trip</h4>
+        <span class="line-x"></span>
+      </div>
+      <a class="see-all-btn" href="/upcoming_trips/festival_trips" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="50">See All <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"></path></svg></a>
+    </div>
+    <swiper-container class="festival-slider" keyboard="true" navigation="true" autoplay loop pagination="true" effect="coverflow" grab-cursor="true"
+    centered-slides="true" slides-per-view="auto" coverflow-effect-rotate="10" coverflow-effect-stretch="0"
+    coverflow-effect-depth="90" coverflow-effect-modifier="2" coverflow-effect-slide-shadows="true">
+    <% @upcoming_trips.each do |trip| %>  
+      <swiper-slide>
+        <%= image_tag (trip.poster.presence || asset_path('trips photos/rann-kutch-fes.png')), alt: trip.title %>
+        <div class="overlay-shade"></div>
+        <div class="trip-details">
+          <div class="details">
+            <h3><%= trip.title%></h3>
+            <div class="location-days">
+              <div class="days-trip">
+                <img src="<%= asset_path 'Time Circle.svg' %>" alt="time" />
+                <h4><%= trip.number_of_days%> Days</h4>
+              </div>
+              <div class="location">
+                <img src="<%= asset_path 'Calendar.svg' %>" alt="location" />
+                <h4><%= trip.start_date&.strftime('%d') %>th - <%= trip.end_date&.strftime('%d %B') %></h4>
+              </div>
+            </div>
+            <a href="<%= upcoming_trip_itineraries_path(trip)%>">Itinerary <img src="<%= asset_path 'Arrow-Right .svg' %>" alt="right-arrow" /></a>
+          </div>
+        </div>
+      </swiper-slide>
+    <% end %>
+  </swiper-container>
+</div>
+</section>
