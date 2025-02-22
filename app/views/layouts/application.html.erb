@@ -1,49 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title><%= content_for(:title) || "Ghumo India Community" %></title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="mobile-web-app-capable" content="yes">
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+<head>
+  <title><%= content_for(:title) || "Ghumo India Community" %></title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
 
-    <%= yield :head %>
+  <%= yield :head %>
 
-    <%# Enable PWA manifest for installable apps (make sure to enable in config/routes.rb too!) %>
-    <%#= tag.link rel: "manifest", href: pwa_manifest_path(format: :json) %>
+  <%# Enable PWA manifest for installable apps (make sure to enable in config/routes.rb too!) %>
+  <%#= tag.link rel: "manifest", href: pwa_manifest_path(format: :json) %>
 
-    <link rel="icon" href="/icon.png" type="image/png">
-    <link rel="icon" href="/icon.svg" type="image/svg+xml">
-    <link rel="apple-touch-icon" href="/icon.png">
+  <link rel="icon" href="/icon.png" type="image/png">
+  <link rel="icon" href="/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/icon.png">
 
-    <%# Includes all stylesheet files in app/assets/stylesheets %>
-    <%= stylesheet_link_tag :app, "data-turbo-track": "reload" %>
-    <%= javascript_importmap_tags %>
+  <%# Includes all stylesheet files in app/assets/stylesheets %>
+  <%= stylesheet_link_tag :app, "data-turbo-track": "reload" %>
+  <%= javascript_importmap_tags %>
 
-    <meta charset="UTF-8">
-    <link rel="shortcut icon" href="./images/logo.svg" type="image/x-icon">
-    <!-- style links -->
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link href="https://cdn.jsdelivr.net/npm/@activeadmin/activeadmin@3.2.5/app/assets/javascripts/active_admin/base.min.js" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-  </head>
+  <meta charset="UTF-8">
+  <link rel="shortcut icon" href="./images/logo.svg" type="image/x-icon">
+  <!-- style links -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/@activeadmin/activeadmin@3.2.5/app/assets/javascripts/active_admin/base.min.js" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
 
-  <body>
-    <main id="main">
-      <%= render '/layouts/header'%>
-      <%= yield %>
-      <%= render '/layouts/footer'%>
-    </main>
+<body>
+  <main id="main">
+    <%= render '/layouts/header'%>
+    <%= yield %>
+    <%= render '/layouts/footer'%>
+  </main>
 
-    <!-- cdn scripts -->
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script>
-      AOS.init(
-        duration = 2000,
+  <!-- cdn scripts -->
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init(
+      duration = 2000,
       );
     </script>
     <!-- <script src="https://unpkg.com/lenis@1.1.14/dist/lenis.min.js"></script> -->
@@ -53,6 +53,83 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
     <script type="module" crossorigin src="https://panorama-slider.uiinitiative.com/assets/index.d2ce9dca.js"></script>
-    <link rel="modulepreload" href="https://panorama-slider.uiinitiative.com/assets/vendor.dba6b2d2.js">
-  </body>
+    <script> 
+      // navbar fixed js
+      document.addEventListener("DOMContentLoaded", function () {
+        var navbar = document.getElementById("navbar");
+        function stickyNavbar() {
+          if (window.scrollY > 130) {
+            navbar.classList.add("sticky");
+          } else {
+            navbar.classList.remove("sticky");
+          }
+        }
+        window.addEventListener("scroll", stickyNavbar);
+      });
+
+      // text animation js
+      const textElement = document.getElementById("animatedText");
+      const texts = ["Connect, Vibe and Discover", "Remote Road Trips"];
+      let textIndex = 0;
+      let charIndex = 0;
+      let isDeleting = false;
+
+      function type() {
+        const currentText = texts[textIndex];
+        textElement.innerHTML = currentText.slice(0, charIndex);
+
+        if (!isDeleting && charIndex < currentText.length) {
+          charIndex++;
+          setTimeout(type, 150);
+        } else if (isDeleting && charIndex > 0) {
+          charIndex--;
+          setTimeout(type, 100);
+        } else {
+          isDeleting = !isDeleting;
+          if (!isDeleting) {
+            textIndex = (textIndex + 1) % texts.length;
+          }
+        setTimeout(type, 700); // Pause before starting to delete or move to next text
+      }
+    }
+
+    type(); // Start the typing animation
+
+
+    // Select the up arrow
+    const scrollToTopButton = document.getElementById('scrollToTop');
+
+    // Show the button when scrolled near the bottom
+    window.addEventListener('scroll', () => {
+      const scrollableHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const scrolledFromTop = window.scrollY;
+
+      // Check if scrolled past the middle
+      if (scrolledFromTop >= scrollableHeight / 2) {
+        scrollToTopButton.classList.add('show');
+      } else {
+        scrollToTopButton.classList.remove('show');
+      }
+    });
+
+    // Scroll to the top on click
+    scrollToTopButton.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+
+
+    const navbarToggler = document.querySelector('.navbar-toggler');
+    const navbarbackdrop = document.querySelector('.navbar-backdrop');
+
+
+    navbarToggler.addEventListener('click', () => {
+      navbarToggler.classList.toggle('open');
+      navbarbackdrop.classList.toggle('open')
+    });
+  </script>  
+  <link rel="modulepreload" href="https://panorama-slider.uiinitiative.com/assets/vendor.dba6b2d2.js">
+</body>
 </html>
