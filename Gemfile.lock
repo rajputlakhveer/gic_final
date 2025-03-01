@@ -320,9 +320,9 @@ GEM
       railties (>= 7)
     solid_queue (0.1.2)
       rails (>= 7.0.3.1)
-    sqlite3 (1.7.3-aarch64-linux)
-    sqlite3 (1.7.3-arm64-darwin)
-    sqlite3 (1.7.3-x86_64-linux)
+    sqlite3 (2.6.0-aarch64-linux-gnu)
+    sqlite3 (2.6.0-arm64-darwin)
+    sqlite3 (2.6.0-x86_64-linux-gnu)
     sshkit (1.23.2)
       base64
       net-scp (>= 1.1.2)
@@ -385,7 +385,7 @@ DEPENDENCIES
   solid_cable
   solid_cache
   solid_queue
-  sqlite3 (~> 1.4)
+  sqlite3 (~> 2.6)
   stimulus-rails
   thruster
   turbo-rails
