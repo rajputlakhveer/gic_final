@@ -1,0 +1,19 @@
+current directory: /Users/lakhveersinghrajput/Lakhveer/final/gic_final/vendor/bun/ruby/3.2.0/gems/racc-1.8.1/ext/racc/cparse
+/Users/lakhveersinghrajput/.rvm/rubies/ruby-3.2.0/bin/ruby -I /Users/lakhveersinghrajput/.rvm/rubies/ruby-3.2.0/lib/ruby/3.2.0 extconf.rb
+creating Makefile
+
+current directory: /Users/lakhveersinghrajput/Lakhveer/final/gic_final/vendor/bun/ruby/3.2.0/gems/racc-1.8.1/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20250302-40695-95utnp sitelibdir\=./.gem.20250302-40695-95utnp clean
+
+current directory: /Users/lakhveersinghrajput/Lakhveer/final/gic_final/vendor/bun/ruby/3.2.0/gems/racc-1.8.1/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20250302-40695-95utnp sitelibdir\=./.gem.20250302-40695-95utnp
+compiling cparse.c
+linking shared-object racc/cparse.bundle
+ld: warning: ignoring duplicate libraries: '-lruby.3.2'
+
+current directory: /Users/lakhveersinghrajput/Lakhveer/final/gic_final/vendor/bun/ruby/3.2.0/gems/racc-1.8.1/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20250302-40695-95utnp sitelibdir\=./.gem.20250302-40695-95utnp install
+/opt/homebrew/opt/coreutils/bin/ginstall -c -m 0755 cparse.bundle ./.gem.20250302-40695-95utnp/racc
+
+current directory: /Users/lakhveersinghrajput/Lakhveer/final/gic_final/vendor/bun/ruby/3.2.0/gems/racc-1.8.1/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20250302-40695-95utnp sitelibdir\=./.gem.20250302-40695-95utnp clean
