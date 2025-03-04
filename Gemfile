@@ -1,7 +1,7 @@
 source "https://rubygems.org"
 
 # Use Rails 7 instead of edge Rails
-gem "rails", "~> 7.0.0"
+gem "rails", "~> 8.0.1"
 
 # The modern asset pipeline for Rails
 gem "propshaft"
