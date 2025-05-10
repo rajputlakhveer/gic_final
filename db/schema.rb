@@ -164,8 +164,6 @@ ActiveRecord::Schema[8.0].define(version: 2025_02_12_083846) do
     t.boolean "corporate_trip"
     t.integer "status"
     t.integer "number_of_days"
-    t.datetime "start_date"
-    t.datetime "end_date"
     t.string "start_location"
     t.string "end_location"
     t.integer "price"

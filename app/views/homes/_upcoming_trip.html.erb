@@ -35,10 +35,6 @@
                 <img src="<%= asset_path 'Time Circle.svg' %>" alt="time" />
                 <h4><%= trip.number_of_days%> Days</h4>
               </div>
-              <div class="location">
-                <img src="<%= asset_path 'Calendar.svg' %>" alt="location" />
-                <h4><%= trip.start_date&.strftime('%d') %>th - <%= trip.end_date&.strftime('%d %B') %></h4>
-              </div>
             </div>
             <a href="<%= upcoming_trip_itineraries_path(trip)%>">Itinerary <img src="<%= asset_path 'Arrow-Right .svg' %>" alt="right-arrow" /></a>
           </div>

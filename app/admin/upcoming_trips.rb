@@ -1,5 +1,5 @@
 ActiveAdmin.register UpcomingTrip do
-  permit_params :title, :description, :offbeat_trip, :festival_trip, :group_trip, :customise_trip, :corporate_trip, :status, :number_of_days, :poster, :start_date, :end_date, :start_location, :end_location, :price, :itinerary_pdf, gallery: [], itineraries_attributes: [:id, :title, :date, :day, :description, :_destroy]
+  permit_params :title, :description, :offbeat_trip, :festival_trip, :group_trip, :customise_trip, :book_now_url, :corporate_trip, :status, :number_of_days, :poster, :start_location, :end_location, :price, :itinerary_pdf, gallery: [], itineraries_attributes: [:id, :title, :date, :day, :description, :_destroy]
 
   actions :all, except: [:destroy]
 
@@ -27,6 +27,7 @@ ActiveAdmin.register UpcomingTrip do
       row :start_location
       row :end_location
       row :price
+      row :book_now_url
       row :poster do |trip|
         image_tag url_for(trip.poster), style: "max-width: 150px; margin-right: 10px;" if trip.poster.attached?
       end
@@ -63,8 +64,7 @@ ActiveAdmin.register UpcomingTrip do
       f.input :poster, as: :file
       f.input :gallery, as: :file, input_html: { multiple: true }
       f.input :itinerary_pdf, as: :file
-      f.input :start_date
-      f.input :end_date
+      f.input :book_now_url
       f.input :start_location
       f.input :end_location
       f.input :price
