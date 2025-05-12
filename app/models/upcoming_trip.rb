@@ -10,7 +10,7 @@ class UpcomingTrip < ApplicationRecord
 
   enum :status, { active: 0, inactive: 1 }
 
-  before_save :generate_itineraries
+  before_create :generate_itineraries
 
   def self.ransackable_associations(auth_object = nil)
     ["gallery_attachments", "gallery_blobs", "itineraries", "available_dates", "trip_items", "poster_attachment", "poster_blob", "itinerary_pdf_blob", "itinerary_pdf_attachment"]
