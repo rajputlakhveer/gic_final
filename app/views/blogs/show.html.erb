@@ -1,0 +1,20 @@
+<!-- hero banner -->
+<section class="hero-common-banner">
+  <%= image_tag (@blog.poster.presence || asset_path('blogimg1.jpg')), alt: @blog.title %>
+  <span class="overlay"></span>
+  <h3 data-aos="fade-up" data-aos-duration="1000" data-aos-delay="50">Traveller Stories</h3>
+</section>
+
+<section class="about-us-main">
+  <div class="container">
+    <h2><%= @blog.title %></h2>
+    <div class="our-concept-wrap">
+      <p><%= @blog.description.html_safe %></p>      
+    </div>
+    <div class="image-wrappper-list hide-phone">
+      <% @blog.images.each do |image| %>
+      <%= image_tag (image.presence || asset_path('grid1.jpg')), alt: @blog.title %>
+      <% end %>
+    </div>
+  </div>
+</section>

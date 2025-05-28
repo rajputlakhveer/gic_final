@@ -1,5 +1,5 @@
 ActiveAdmin.register Blog do
-  permit_params :title, :description, :poster
+  permit_params :title, :description, :poster, images: []
 
   actions :all, except: [:destroy]
 
@@ -18,6 +18,13 @@ ActiveAdmin.register Blog do
       row :poster do |trip|
         image_tag url_for(trip.poster), style: "max-width: 150px; margin-right: 10px;" if trip.poster.attached?
       end
+      row :images do |trip|
+        trip.images.each do |photo|
+          div do
+            image_tag url_for(photo), style: "max-width: 150px; margin-right: 10px;"
+          end
+        end
+      end
       div do 
         link_to "Delete Blog", delete_blog_admin_blog_path(blog), method: :get
       end
@@ -29,6 +36,7 @@ ActiveAdmin.register Blog do
       f.input :title
       f.input :description
       f.input :poster,  as: :file
+      f.input :images, as: :file, input_html: { multiple: true }
     end
     
     f.actions

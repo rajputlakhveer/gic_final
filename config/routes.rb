@@ -20,14 +20,15 @@ Rails.application.routes.draw do
       get :festival_trips
       get :corporate_trips
       get :group_trips
-      get :offbeat_trips 
+      get :offbeat_trips
+      get :customise_trips
     end
   end
 
   resources :traveller_stories, only: [:index]
   resources :faqs, only: [:index]
   resources :careers, only: [:index]
-  resources :blogs, only: [:index]
+  resources :blogs, only: [:index, :show]
   resources :chat_us, only: [:new, :create]
 
   get 'about_us', to: 'homes#about_us'

@@ -7,7 +7,7 @@
     <div class="container-fluid">
       <a class="navbar-brand" href="/"><img src="<%= asset_path 'logo.svg' %>" alt="logo" /></a>
       <a href="#" class="number-wrapper hide-desktop">
-        <h4>+91 7389890408</h4>
+        <h4>+91 7389898141</h4>
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -50,6 +50,16 @@
     </div>
   </nav>
   <!-- header section -->
+  <style>
+    .dropdown-menu {
+      display: none;
+    }
+
+    .nav-item:hover .dropdown-menu {
+      display: block;
+    }
+  </style>
+
   <header class="header-wrapper">
     <ul class="navbar-nav m-auto">
       <li class="nav-item">
@@ -60,12 +70,34 @@
       </li>
       <li class="nav-item">
         <a class="nav-link" href="/upcoming_trips/group_trips">Group Trips</a>
+        <ul class="dropdown-menu">
+          <li class="dropdown-item"><a href="/upcoming_trips/group_trips?type=backpacking_trips">Backpacking Trips</a></li>
+          <li class="dropdown-item"><a href="/upcoming_trips/group_trips?type=weekend">Weekend Trips</a></li>
+          <li class="dropdown-item"><a href="/upcoming_trips/group_trips?type=treks">Treks</a></li>
+        </ul>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/contact">Customise Trips</a>
+        <a class="nav-link" href="/upcoming_trips/customise_trips">Customise Trips</a>
+        <ul class="dropdown-menu">
+          <li class="dropdown-item"><a href="/upcoming_trips/customise_trips?type=himachal">Himachal</a></li>
+          <li class="dropdown-item"><a href="/upcoming_trips/customise_trips?type=uttarakhand">Uttarakhand</a></li>
+          <li class="dropdown-item"><a href="/upcoming_trips/customise_trips?type=kashmir">Kashmir</a></li>
+          <li class="dropdown-item"><a href="/upcoming_trips/customise_trips?type=kerala">Kerala</a></li>
+          <li class="dropdown-item"><a href="/upcoming_trips/customise_trips?type=rajasthan">Rajasthan</a></li>
+          <li class="dropdown-item"><a href="/upcoming_trips/customise_trips?type=sikkim">Sikkim</a></li>
+          <li class="dropdown-item"><a href="/upcoming_trips/customise_trips?type=tamilnadu">Tamil Nadu</a></li>
+          <li class="dropdown-item"><a href="/upcoming_trips/customise_trips?type=karnataka">Karnataka</a></li>
+          <li class="dropdown-item"><a href="/upcoming_trips/customise_trips?type=goa">Goa</a></li>
+          <li class="dropdown-item"><a href="/upcoming_trips/customise_trips?type=meghalaya">Meghalaya</a></li>
+          <li class="dropdown-item"><a href="/upcoming_trips/customise_trips?type=andaman">Andaman</a></li>
+          <li class="dropdown-item"><a href="/upcoming_trips/customise_trips?type=honeymoon">Honeymoon Packages</a></li>
+          <li class="dropdown-item"><a href="/upcoming_trips/customise_trips?type=family">Family Trip Packages</a></li>
+          <li class="dropdown-item"><a href="/upcoming_trips/customise_trips?type=school_college">School and College Trips</a></li>
+        </ul>
       </li>
     </ul>
   </header>
+
 </section>
 
 <script>

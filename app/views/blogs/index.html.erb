@@ -15,7 +15,7 @@
               <%= image_tag (blog.poster.presence || asset_path('blogimg1.jpg')), alt: blog.title %>
             </a>
             <h3><%= blog.title%></h3>
-            <a href="/#" class="read-more">Read more...</a>
+            <a href="<%= blogs_path(blog)%>" class="read-more">Read more...</a>
           </div>
         </div>
       <% end %>

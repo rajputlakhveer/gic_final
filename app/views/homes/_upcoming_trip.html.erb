@@ -23,7 +23,7 @@
     <swiper-container class="upcoming-slider up-align" keyboard="true" navigation="true" autoplay loop pagination="true" effect="coverflow" grab-cursor="true"
     centered-slides="true" slides-per-view="auto" coverflow-effect-rotate="10" coverflow-effect-stretch="0"
     coverflow-effect-depth="90" coverflow-effect-modifier="2" coverflow-effect-slide-shadows="true">
-    <% @upcoming_trips.each do |trip| %>  
+    <% @upcoming_trips&.each do |trip| %>  
       <swiper-slide>
         <%= image_tag (trip.poster.presence || asset_path('trips photos/rann-kutch-fes.png')), alt: trip.title %>
         <div class="overlay-shade"></div>
