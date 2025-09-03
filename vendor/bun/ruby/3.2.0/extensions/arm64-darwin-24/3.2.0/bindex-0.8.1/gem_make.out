@@ -1,0 +1,19 @@
+current directory: /Users/lakhveersinghrajput/Lakhveer/final/gic_final/vendor/bun/ruby/3.2.0/gems/bindex-0.8.1/ext/skiptrace
+/Users/lakhveersinghrajput/.rvm/rubies/ruby-3.2.0/bin/ruby -I /Users/lakhveersinghrajput/.rvm/rubies/ruby-3.2.0/lib/ruby/3.2.0 extconf.rb
+creating Makefile
+
+current directory: /Users/lakhveersinghrajput/Lakhveer/final/gic_final/vendor/bun/ruby/3.2.0/gems/bindex-0.8.1/ext/skiptrace
+make DESTDIR\= sitearchdir\=./.gem.20250302-40695-7p0j39 sitelibdir\=./.gem.20250302-40695-7p0j39 clean
+
+current directory: /Users/lakhveersinghrajput/Lakhveer/final/gic_final/vendor/bun/ruby/3.2.0/gems/bindex-0.8.1/ext/skiptrace
+make DESTDIR\= sitearchdir\=./.gem.20250302-40695-7p0j39 sitelibdir\=./.gem.20250302-40695-7p0j39
+compiling cruby.c
+linking shared-object skiptrace/internal/cruby.bundle
+ld: warning: ignoring duplicate libraries: '-lruby.3.2'
+
+current directory: /Users/lakhveersinghrajput/Lakhveer/final/gic_final/vendor/bun/ruby/3.2.0/gems/bindex-0.8.1/ext/skiptrace
+make DESTDIR\= sitearchdir\=./.gem.20250302-40695-7p0j39 sitelibdir\=./.gem.20250302-40695-7p0j39 install
+/opt/homebrew/opt/coreutils/bin/ginstall -c -m 0755 cruby.bundle ./.gem.20250302-40695-7p0j39/skiptrace/internal
+
+current directory: /Users/lakhveersinghrajput/Lakhveer/final/gic_final/vendor/bun/ruby/3.2.0/gems/bindex-0.8.1/ext/skiptrace
+make DESTDIR\= sitearchdir\=./.gem.20250302-40695-7p0j39 sitelibdir\=./.gem.20250302-40695-7p0j39 clean
